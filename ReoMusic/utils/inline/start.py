@@ -26,12 +26,15 @@ def start_pannel(_):
 def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
-            InlineKeyboardButton(text=_["S_B_8"], callback_data="settings_back_helper"),
-        ],
-        [
             InlineKeyboardButton(
                 text=_["S_B_5"], url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
             ),
+        ],
+        [
+            InlineKeyboardButton(text=_["S_B_8"], callback_data="settings_back_helper"),
+        ],
+        [
+        InlineKeyboardButton(text=_["S_B_4"], url=config.SUPPORT_CHANNEL),
         ],
         [
             InlineKeyboardButton(text=_["S_B_6"], callback_data="gib_source"),
