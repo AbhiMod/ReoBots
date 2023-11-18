@@ -96,7 +96,7 @@ async def gen_thumb(videoid):
                 j += 1
                 draw.text(
                     (600, 340),
-                    f"{line}",
+                    f"Tɪᴛʟᴇ : {line}",
                     fill="white",
                     stroke_width=1,
                     stroke_fill="white",
@@ -132,14 +132,6 @@ async def gen_thumb(videoid):
         draw.text(
             (600, 550),
             f"Channel : {channel}",
-            fill="white",
-            stroke_width=1,
-            stroke_fill="white",
-            font=font,
-        )
-        draw.text(
-            (600, 600),
-            f"Reo Bots NetWork",
             fill="white",
             stroke_width=1,
             stroke_fill="white",
