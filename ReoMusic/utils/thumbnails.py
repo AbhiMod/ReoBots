@@ -84,7 +84,7 @@ async def gen_thumb(videoid, user_id, theme):
         x = f.resize((107, 107))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"Backgrounds/{theme}.PNG")
+        bg = Image.open(f"AMBOT/{theme}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(30))
