@@ -11,7 +11,7 @@ from youtubesearchpython.__future__ import VideosSearch
 from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 
 
-themes = ["bgreen", "blue", "colorfull", "dgreen", "hgreen", "lgreen", "lyellow", "orange", "pink", "purple", "rainbow", "red", "sky", "thumbnail", "yellow"]
+themes = ["repoo", "repoo", "repoo", "dgreen", "repoo", "repoo", "repoo", "repoo", "repoo", "repoo", "repoo", "repoo", "repoo", "repoo", "repoo"]
 colors = ["white", "black", "red", "orange", "yellow", "green", "cyan", "azure", "blue", "violet", "magenta", "pink"]
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -63,7 +63,7 @@ async def gen_thumb(videoid):
         images = random.choice(themes)
         border = random.choice(colors)
         image1 = Image.open(f"cache/thumb{videoid}.png")
-        image2 = Image.open(f"assets/reo/{images}.png")
+        image2 = Image.open(f"assets/reo/{images}.jpg")
         image3 = changeImageSize(1280, 720, image1)
         image4 = changeImageSize(1280, 720, image2)
         image5 = image3.convert("RGBA")
