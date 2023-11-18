@@ -1,13 +1,17 @@
+
+
 import os
 import re
 import textwrap
-import random
+
 import aiofiles
 import aiohttp
-from youtubesearchpython.__future__ import VideosSearch
-from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 import numpy as np
+
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from youtubesearchpython.__future__ import VideosSearch
+
+from config import YOUTUBE_IMG_URL
 from ReoMusic import app
 
 
@@ -125,19 +129,19 @@ async def gen_thumb(videoid, user_id, theme):
         ImageFont.truetype("assets/font.ttf", 25)
         para = textwrap.wrap(title, width=32)
         try:
-            text_w, text_h = draw.textsize(f"Now Playing", font=font)
+            text_w, text_h = draw.textsize(f"Reo MUSIC IS PLAYING", font=font)
             draw.text(
                 ((1280 - text_w) / 2, 30),
-                f"{MUSIC_BOT_NAME}",
+                f"Reo MUSIC IS PLAYING",
                 fill="red",
                 font=font,
             )
             text_w, text_h = draw.textsize(
-                f"{MUSIC_BOT_NAME}", font=arial
+                f"AMBOT", font=arial
             )
             draw.text(
                 ((1280 - text_w) / 2, 80),
-                f"{MUSIC_BOT_NAME}",
+                f"AMBOT",
                 fill="green",
                 font=arial,
             )
@@ -163,10 +167,10 @@ async def gen_thumb(videoid, user_id, theme):
                 )
         except:
             pass
-        text_w, text_h = draw.textsize(f"YouTube: ReoBots", font=arial)
+        text_w, text_h = draw.textsize(f"YouTube: AMBOT", font=arial)
         draw.text(
             ((1280 - text_w) / 2, 620),
-            f"YouTube: ReoBots",
+            f"YouTube: AMBOT",
             fill="white",
             font=arial,
         )
