@@ -137,6 +137,14 @@ async def gen_thumb(videoid):
             stroke_fill="white",
             font=font,
         )
+        draw.text(
+            (600, 600),
+            f"Reo Bots NetWork",
+            fill="white",
+            stroke_width=1,
+            stroke_fill="white",
+            font=font,
+        )
         try:
             os.remove(f"cache/thumb{videoid}.png")
         except:
