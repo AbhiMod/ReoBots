@@ -128,16 +128,16 @@ async def gen_thumb(videoid, user_id, theme):
             text_w, text_h = draw.textsize(f"Now Playing", font=font)
             draw.text(
                 ((1280 - text_w) / 2, 30),
-                f"Reo Bots",
+                f"{MUSIC_BOT_NAME}",
                 fill="red",
                 font=font,
             )
             text_w, text_h = draw.textsize(
-                f"Reo Music One Of The Most Advanced Telegram Music Bot", font=arial
+                f"{MUSIC_BOT_NAME}", font=arial
             )
             draw.text(
                 ((1280 - text_w) / 2, 80),
-                f"Reo Music One Of The Most Advanced Telegram Music Bot",
+                f"{MUSIC_BOT_NAME}",
                 fill="green",
                 font=arial,
             )
