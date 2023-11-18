@@ -227,7 +227,7 @@ song_11 : "Uᴘʟᴏᴀᴅɪɴɢ sᴛᴀʀᴛᴇᴅ ʙᴀʙʏ\n\nᴘʟᴇᴀsᴇ
 queue_1 : "☛ Pʟᴇᴀsᴇ ᴡᴀɪᴛ...!!"
 queue_2 : "Queued List Is Empty. No tracks found"
 queue_3 : "<u>Queued Tracks:</u>  [Checkout More Queued Tracks From Here]({0})"
-queue_4 : "┏━━━━━━━━━━━━━━━━━⧫\n┠ 🀄 **Aᴅᴅᴇᴅ Tᴏ Qᴜᴇᴜᴇ #{0}**\n┗━━━━━━━━━━━━━━━━━⧫\n ◆ \n ╰ Tɪᴛʟᴇ » {1}!\n ◆\n ╰ Dᴜʀᴀᴛɪᴏɴ » {2} ~\n\n  ◆ Aᴅᴅ ʙʏ » @TheTeamInsane"
+queue_4 : "┏━━━━━━━━━━━━━━━━━⧫\n┠ 🀄 **Aᴅᴅᴇᴅ Tᴏ Qᴜᴇᴜᴇ #{0}**\n┗━━━━━━━━━━━━━━━━━⧫\n ◆ \n ╰ Tɪᴛʟᴇ » {1}!\n ◆\n ╰ Dᴜʀᴀᴛɪᴏɴ » {2} ~\n\n  ◆ Aᴅᴅ ʙʏ » {3}"
 queue_5 : "Oɴʟʏ ᴏɴᴇ ᴛʀᴀᴄᴋ ɪs ɪɴ ǫᴜᴇᴜᴇ....Aᴅᴅ sᴏᴍᴇ ᴍᴏʀᴇ ᴛʀᴀᴄᴋs ɪɴ ǫᴜᴇᴜᴇ ᴛᴏ ᴄʜᴇᴄᴋ ᴡʜᴏʟᴇ ǫᴜᴇᴜᴇ...!!"
 
 # All Streaming Lines
