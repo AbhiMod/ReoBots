@@ -1,17 +1,14 @@
-from ReoMusic import app
 from pyrogram import filters
-from pyrogram.errors import MessageNotModified
 from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
-    InputMediaPhoto,
     InputMediaVideo,
     Message,
 )
+from ReoMusic import app  # Assuming ReoMusic is the name of your Pyrogram client
 import config
-from config import BANNED_USERS, CLEANMODE_DELETE_MINS, MUSIC_BOT_NAME, OWNER_ID
-
+from config import BANNED_USERS
 
 @app.on_message(filters.command("id"))
 def ids(_, message):
@@ -35,20 +32,17 @@ async def send_source_message(callback_query):
     )
 
 @app.on_callback_query(filters.regex("gib_source") & ~BANNED_USERS)
-@languageCB
-async def gib_repo(client, callback_query, _):
+async def gib_repo(_, callback_query):
     await send_source_message(callback_query)
 
 @app.on_message(
     filters.command("repo") & filters.group & ~filters.edited & ~BANNED_USERS
 )
-@language
-async def repo_cmds(client, message: Message, _):
+async def repo_cmds(_, message):
     await send_source_message(message)
 
 @app.on_message(
     filters.command("source") & filters.group & ~filters.edited & ~BANNED_USERS
 )
-@language
-async def source_cmds(client, message: Message, _):
+async def source_cmds(_, message):
     await send_source_message(message)
