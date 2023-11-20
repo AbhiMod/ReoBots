@@ -6,8 +6,8 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
 import config
-from config import BANNED_USERS, MUSIC_BOT_NAME, BOT_NAME
-from config.config import OWNER_ID, MUSIC_BOT_NAME, BOT_NAME
+from config import BANNED_USERS, MUSIC_BOT_NAME, BOT_NAME, BOT_NETWORK
+from config.config import OWNER_ID, MUSIC_BOT_NAME, BOT_NAME, BOT_NETWORK
 from strings import get_command, get_string
 from ReoMusic import Telegram, YouTube, app
 from ReoMusic.misc import SUDOERS
@@ -191,20 +191,20 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
                 await message.reply_photo(
                     photo=config.START_IMG_URL,
                     caption=_["start_2"].format(
-                        message.from_user.mention, f"[{BOT_NAME}](https://t.me/{bot_mention})"
+                        message.from_user.mention, f"[{BOT_NAME}](https://t.me/{bot_mention})", f"[{BOT_NETWORK}](https://t.me/ReoBots)"
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             except:
                 await message.reply_text(
                     _["start_2"].format(
-                        message.from_user.mention,f"[{BOT_NAME}](https://t.me/{bot_mention})"
+                        message.from_user.mention,f"[{BOT_NAME}](https://t.me/{bot_mention})", f"[{BOT_NETWORK}](https://t.me/ReoBots)"
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
         else:
             await message.reply_text(
-                _["start_2"].format(message.from_user.mention, f"[{BOT_NAME}](https://t.me/{bot_mention})"),
+                _["start_2"].format(message.from_user.mention, f"[{BOT_NAME}](https://t.me/{bot_mention})", f"[{BOT_NETWORK}](https://t.me/ReoBots)"),
                 reply_markup=InlineKeyboardMarkup(out),
             )
         if await is_on_off(config.LOG):
