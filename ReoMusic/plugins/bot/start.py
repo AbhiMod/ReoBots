@@ -121,7 +121,7 @@ async def start_comm(client, message: Message, _):
             await del_plist_msg(client=client, message=message, _=_)
         if name == "verify":
             await message.reply_text(
-                f"🍂 {message.from_user.first_name} Yᴏᴜ Aʀᴇ Sᴜᴄᴄᴇssғᴜʟʟʏ Vᴇʀɪғɪᴇᴅ ɪɴ f"[{BOT_NAME}](https://t.me/{bot_mention})".\n\n❄️ Nᴏᴡ Eɴᴊᴏʏ Pʟᴀʏɪɴɢ Mᴜsɪᴄ !!"
+                f"🍂 {message.from_user.first_name} Yᴏᴜ Aʀᴇ Sᴜᴄᴄᴇssғᴜʟʟʏ Vᴇʀɪғɪᴇᴅ ɪɴ {config.MUSIC_BOT_NAME} .\n\n❄️ Nᴏᴡ Eɴᴊᴏʏ Pʟᴀʏɪɴɢ Mᴜsɪᴄ !!"
             )
             if await is_on_off(config.LOG):
                 sender_id = message.from_user.id
