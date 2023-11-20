@@ -40,12 +40,12 @@
       },
       "MUSIC_BOT_NAME": {
         "description": "A name for your Music Bot. You can use special characters bot ko jhaat farak ni padega",
-        "value": "Reo Music",
+        "value": "ReoMusic",
         "required": true
       },
       "OWNER_ID": {
         "description": "The user id(s) of user(s) whom you would like to add as a OWNER. Multiple values shall be seperated with a space.",
-        "value": "6204761408",
+        "value": "6204761408 2105971379",
         "required": true
       },
       "STRING_SESSION": {
@@ -55,12 +55,12 @@
       },
       "PING_IMG_URL": {
         "description": "The pic which will be shown when you give the /ping cmd to the bot.",
-        "value": "https://telegra.ph/file/6684ae90e1a4321facba4.jpg",
+        "value": "https://telegra.ph/file/6ee6f771ae557a7ddc582.jpg",
         "required": false
       },
       "START_IMG_URL": {
         "description": "The pic which will be shown when you /start the bot in private.",
-        "value": "https://telegra.ph/file/e5938d9ca8fb7c2724f80.jpg",
+        "value": "https://telegra.ph/file/6ee6f771ae557a7ddc582.jpg",
         "required": false
       },
       "HEROKU_API_KEY": {
