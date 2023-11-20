@@ -6,8 +6,8 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
 import config
-from config import BANNED_USERS, MUSIC_BOT_NAME
-from config.config import OWNER_ID, MUSIC_BOT_NAME
+from config import BANNED_USERS, MUSIC_BOT_NAME, BOT_NAME
+from config.config import OWNER_ID, MUSIC_BOT_NAME, BOT_NAME
 from strings import get_command, get_string
 from ReoMusic import Telegram, YouTube, app
 from ReoMusic.misc import SUDOERS
@@ -121,7 +121,7 @@ async def start_comm(client, message: Message, _):
             await del_plist_msg(client=client, message=message, _=_)
         if name == "verify":
             await message.reply_text(
-                f"🍂 {message.from_user.first_name} Yᴏᴜ Aʀᴇ Sᴜᴄᴄᴇssғᴜʟʟʏ Vᴇʀɪғɪᴇᴅ ɪɴ {config.MUSIC_BOT_NAME}.\n\n❄️ Nᴏᴡ Eɴᴊᴏʏ Pʟᴀʏɪɴɢ Mᴜsɪᴄ !!"
+                f"🍂 {message.from_user.first_name} Yᴏᴜ Aʀᴇ Sᴜᴄᴄᴇssғᴜʟʟʏ Vᴇʀɪғɪᴇᴅ ɪɴ f"[{BOT_NAME}](https://t.me/{bot_mention})".\n\n❄️ Nᴏᴡ Eɴᴊᴏʏ Pʟᴀʏɪɴɢ Mᴜsɪᴄ !!"
             )
             if await is_on_off(config.LOG):
                 sender_id = message.from_user.id
@@ -191,20 +191,20 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
                 await message.reply_photo(
                     photo=config.START_IMG_URL,
                     caption=_["start_2"].format(
-                        message.from_user.mention, f"[{MUSIC_BOT_NAME}](https://t.me/{bot_mention})"
+                        message.from_user.mention, f"[{BOT_NAME}](https://t.me/{bot_mention})"
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             except:
                 await message.reply_text(
                     _["start_2"].format(
-                        message.from_user.mention,f"[{MUSIC_BOT_NAME}](https://t.me/{bot_mention})"
+                        message.from_user.mention,f"[{BOT_NAME}](https://t.me/{bot_mention})"
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
         else:
             await message.reply_text(
-                _["start_2"].format(message.from_user.mention, f"[{MUSIC_BOT_NAME}](https://t.me/{bot_mention})"),
+                _["start_2"].format(message.from_user.mention, f"[{BOT_NAME}](https://t.me/{bot_mention})"),
                 reply_markup=InlineKeyboardMarkup(out),
             )
         if await is_on_off(config.LOG):
@@ -227,7 +227,7 @@ async def testbot(client, message: Message, _):
     out = start_pannel(_)
     return await message.reply_photo(
         photo=config.START_IMG_URL,
-        caption=_["start_1"].format(message.chat.title, config.MUSIC_BOT_NAME),
+        caption=_["start_1"].format(message.chat.title, f"[{BOT_NAME}](https://t.me/{bot_mention})"),
         reply_markup=InlineKeyboardMarkup(out),
     )
 
@@ -274,11 +274,11 @@ async def welcome(client, message: Message):
                 )
             if member.id in config.OWNER_ID:
                 return await message.reply_text(
-                    _["start_4"].format(config.MUSIC_BOT_NAME, member.mention)
+                    _["start_4"].format(f"[{BOT_NAME}](https://t.me/{bot_mention})", member.mention)
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
-                    _["start_5"].format(config.MUSIC_BOT_NAME, member.mention)
+                    _["start_5"].format(f"[{BOT_NAME}](https://t.me/{bot_mention})", member.mention)
                 )
             return
         except:
