@@ -184,26 +184,27 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
             OWNER = OWNER_ID[0]
         except:
             OWNER = None
+        bot_mention = app.username 
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:
             try:
                 await message.reply_photo(
                     photo=config.START_IMG_URL,
                     caption=_["start_2"].format(
-                        message.from_user.mention, config.MUSIC_BOT_NAME
+                        message.from_user.mention, {bot_mention}
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             except:
                 await message.reply_text(
                     _["start_2"].format(
-                        message.from_user.mention, config.MUSIC_BOT_NAME
+                        message.from_user.mention, {bot_mention}
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
         else:
             await message.reply_text(
-                _["start_2"].format(message.from_user.mention, config.MUSIC_BOT_NAME),
+                _["start_2"].format(message.from_user.mention, {bot_mention}),
                 reply_markup=InlineKeyboardMarkup(out),
             )
         if await is_on_off(config.LOG):
