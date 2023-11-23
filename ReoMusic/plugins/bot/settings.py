@@ -9,7 +9,7 @@ from pyrogram.types import (
     Message,
 )
 import config
-from config import BANNED_USERS, CLEANMODE_DELETE_MINS, MUSIC_BOT_NAME, OWNER_ID
+from config import BANNED_USERS, CLEANMODE_DELETE_MINS, MUSIC_BOT_NAME, OWNER_ID, BOT_NAME
 from strings import get_command
 from ReoMusic import app
 from ReoMusic.utils.database import (
@@ -109,6 +109,7 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
             OWNER = None
         buttons = private_panel(_, app.username, OWNER)
         image = config.START_IMG_URL
+        bot_mention = app.username
         served_chats = len(await get_served_chats())
         served_users = len(await get_served_users())
         await CallbackQuery.edit_message_media(
@@ -116,7 +117,7 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
                 media=image,
                 caption=_["start_2"].format(
                     CallbackQuery.from_user.first_name,
-                    MUSIC_BOT_NAME,
+                    f"[{BOT_NAME}](https://t.me/{bot_mention})",
                     served_users,
                     served_chats,
                 ),
