@@ -1,6 +1,7 @@
 import asyncio
 import time
 import random
+from ReoMusic import app
 from pyrogram import filters
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
