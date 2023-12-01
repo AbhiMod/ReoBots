@@ -1,5 +1,6 @@
 import asyncio
-
+import time
+import random
 from pyrogram import filters
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
@@ -9,10 +10,21 @@ import config
 from config import BANNED_USERS, MUSIC_BOT_NAME, BOT_NAME, BOT_NETWORK
 from config.config import OWNER_ID, MUSIC_BOT_NAME, BOT_NAME, BOT_NETWORK
 from strings import get_command, get_string
+from ReoMusic.utils.formatters import get_readable_time
 from ReoMusic import Telegram, YouTube, app
 from ReoMusic.misc import SUDOERS
 from ReoMusic.plugins.play.playlist import del_plist_msg
 from ReoMusic.plugins.sudo.sudoers import sudoers_list
+from ReoMusic.utils.database import (
+    get_global_tops,
+    get_particulars,
+    get_queries,
+    get_served_chats,
+    get_served_users,
+    get_sudoers,
+    get_top_chats,
+    get_topp_users,
+)
 from ReoMusic.utils.database import (
     add_served_chat,
     add_served_user,
@@ -23,6 +35,7 @@ from ReoMusic.utils.database import (
     is_on_off,
     is_served_private_chat,
 )
+from ReoMusic.utils import bot_sys_stats
 from ReoMusic.utils.decorators.language import LanguageStart
 from ReoMusic.utils.inline import help_pannel, private_panel, start_pannel
 from ReoMusic.utils.command import commandpro
@@ -186,6 +199,9 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
             OWNER = None
         bot_mention = app.username 
         out = private_panel(_, app.username, OWNER)
+        served_chats = len(await get_served_chats())
+        served_users = len(await get_served_users())
+        UP, CPU, RAM, DISK = await bot_sys_stats()
         if config.START_IMG_URL:
             try:
                 await message.reply_photo(
@@ -193,7 +209,7 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
                     caption=_["start_2"].format(
                         f"[{BOT_NETWORK}](https://t.me/ReoBots)", 
                         message.from_user.mention, 
-                        f"[{BOT_NAME}](https://t.me/{bot_mention})"
+                        app.mention, UP, DISK, CPU, RAM,served_users,served_chats
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
@@ -202,7 +218,7 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
                     _["start_2"].format(
                        f"[{BOT_NETWORK}](https://t.me/ReoBots)",  
                         message.from_user.mention,
-                        f"[{BOT_NAME}](https://t.me/{bot_mention})"
+                        app.mention, UP, DISK, CPU, RAM,served_users,served_chats
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
@@ -210,7 +226,7 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
             await message.reply_text(
                 _["start_2"].format(f"[{BOT_NETWORK}](https://t.me/ReoBots)",
                                     message.from_user.mention, 
-                                    f"[{BOT_NAME}](https://t.me/{bot_mention})"
+                                    app.mention, UP, DISK, CPU, RAM,served_users,served_chats
                                    ),
                 reply_markup=InlineKeyboardMarkup(out),
             )
@@ -232,9 +248,10 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
 @LanguageStart
 async def testbot(client, message: Message, _):
     out = start_pannel(_)
+    uptime = int(time.time() - _boot_)
     return await message.reply_photo(
         photo=config.START_IMG_URL,
-        caption=_["start_1"].format(message.chat.title, f"[{BOT_NAME}](https://t.me/{bot_mention})"),
+        caption=_["start_1"].format(message.chat.title, app.mention,get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
 
