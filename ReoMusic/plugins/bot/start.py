@@ -6,7 +6,7 @@ from pyrogram import filters
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
-
+from ReoMusic.misc import _boot_
 import config
 from config import BANNED_USERS, MUSIC_BOT_NAME, BOT_NAME, BOT_NETWORK
 from config.config import OWNER_ID, MUSIC_BOT_NAME, BOT_NAME, BOT_NETWORK
