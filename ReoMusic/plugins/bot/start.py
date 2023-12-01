@@ -210,7 +210,7 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
                     caption=_["start_2"].format(
                         f"[{BOT_NETWORK}](https://t.me/ReoBots)", 
                         message.from_user.mention, 
-                        app.mention, UP, DISK, CPU, RAM,served_users,served_chats
+                        f"[{BOT_NAME}](https://t.me/{bot_mention})", UP, DISK, CPU, RAM,served_users,served_chats
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
@@ -219,7 +219,7 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
                     _["start_2"].format(
                        f"[{BOT_NETWORK}](https://t.me/ReoBots)",  
                         message.from_user.mention,
-                        app.mention, UP, DISK, CPU, RAM,served_users,served_chats
+                        f"[{BOT_NAME}](https://t.me/{bot_mention})", UP, DISK, CPU, RAM,served_users,served_chats
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
@@ -227,7 +227,7 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
             await message.reply_text(
                 _["start_2"].format(f"[{BOT_NETWORK}](https://t.me/ReoBots)",
                                     message.from_user.mention, 
-                                    app.mention, UP, DISK, CPU, RAM,served_users,served_chats
+                                    f"[{BOT_NAME}](https://t.me/{bot_mention})", UP, DISK, CPU, RAM,served_users,served_chats
                                    ),
                 reply_markup=InlineKeyboardMarkup(out),
             )
