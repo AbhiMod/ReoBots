@@ -42,7 +42,7 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ReoBots")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ReoBotsUpdates")
 SUPPORT_GROUP = getenv("SUPPORT_GROUP", None)
 
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "True")
