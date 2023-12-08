@@ -84,10 +84,9 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        STATS = f"[Here](https://t.me/ReoStatusBots/2)"
         await message.reply_photo(
             photo=config.START_IMG_URL,
-            caption=_["start_2"].format(message.from_user.mention, app.mention,STATS),
+            caption=_["start_2"].format(message.from_user.mention, app.mention,"[Here](https://t.me/ReoStatusBots/2)"),
             reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(2):
