@@ -61,7 +61,7 @@ async def play_commnd(
     plist_type = None
     spotify = None
     user_id = message.from_user.id
-    user_name = message.from_user.first_name
+    user_name = message.from_user.mention
     audio_telegram = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
         if message.reply_to_message
@@ -224,7 +224,7 @@ async def play_commnd(
                 streamtype = "playlist"
                 plist_type = "spartist"
                 img = config.SPOTIFY_ARTIST_IMG_URL
-                cap = _["play_11"].format(message.from_user.first_name)
+                cap = _["play_11"].format(message.from_user.mention)
             else:
                 return await mystic.edit_text(_["play_15"])
         elif await Apple.valid(url):
@@ -305,7 +305,7 @@ async def play_commnd(
                     message.from_user.id,
                     url,
                     chat_id,
-                    message.from_user.first_name,
+                    message.from_user.mention,
                     message.chat.id,
                     video=video,
                     streamtype="index",
@@ -447,7 +447,7 @@ async def play_music(client, CallbackQuery, _):
         chat_id, channel = await get_channeplayCB(_, cplay, CallbackQuery)
     except:
         return
-    user_name = CallbackQuery.from_user.first_name
+    user_name = CallbackQuery.from_user.mention
     try:
         await CallbackQuery.message.delete()
         await CallbackQuery.answer()
@@ -534,7 +534,7 @@ async def play_playlists_command(client, CallbackQuery, _):
         chat_id, channel = await get_channeplayCB(_, cplay, CallbackQuery)
     except:
         return
-    user_name = CallbackQuery.from_user.first_name
+    user_name = CallbackQuery.from_user.mention
     await CallbackQuery.message.delete()
     try:
         await CallbackQuery.answer()
