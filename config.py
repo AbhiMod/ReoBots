@@ -14,7 +14,7 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 BOT_NAME = getenv("BOT_NAME", "ReoMusic [1]")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "900"))
 LOGGER_ID = int(getenv("LOGGER_ID","-1002078194217"))
-OWNER_ID = int(getenv("OWNER_ID", "6204761408"))
+OWNER_ID = int(getenv("OWNER_ID", "5360305806"))
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
