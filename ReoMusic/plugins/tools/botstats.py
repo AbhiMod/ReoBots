@@ -29,5 +29,5 @@ def time_formatter(milliseconds):
 async def activevc(_, message: Message):
     uptime = time_formatter((time.time() - start_time) * 1000)
     cpu = psutil.cpu_percent()
-    TEXT = f"**ᴜᴘᴛɪᴍᴇ** : {uptime} | **ᴄᴘᴜ** : {cpu}% | **ᴀꜱꜱɪꜱ ɪᴅꜱ**: {len(assistants)}"
+    TEXT = f"**ᴜᴘᴛɪᴍᴇ** : {uptime} | **ᴄᴘᴜ** : {cpu}% |**ᴀꜱꜱɪꜱ ɪᴅꜱ**: {len(assistants)}"
     await message.reply(TEXT)
