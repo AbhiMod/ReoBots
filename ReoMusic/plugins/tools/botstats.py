@@ -4,6 +4,7 @@ from ReoMusic import app
 from pyrogram import Client
 from pyrogram import filters 
 from pyrogram.types import Message
+from ReoMusic.core.userbot import assistants
 
 start_time = time.time()
 
@@ -28,5 +29,5 @@ def time_formatter(milliseconds):
 async def activevc(_, message: Message):
     uptime = time_formatter((time.time() - start_time) * 1000)
     cpu = psutil.cpu_percent()
-    TEXT = f"**ᴜᴘᴛɪᴍᴇ** : {uptime} | **ᴄᴘᴜ** : {cpu}%"
+    TEXT = f"**ᴜᴘᴛɪᴍᴇ** : {uptime} | **ᴄᴘᴜ** : {cpu}% | **ᴀꜱꜱɪꜱᴛᴀɴᴛ ɪᴅꜱ** : {len(assistants)}"
     await message.reply(TEXT)
